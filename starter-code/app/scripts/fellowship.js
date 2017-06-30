@@ -24,6 +24,21 @@ var body = document.querySelector('body');
 
 
 function makeMiddleEarth() {
+  var middleEarthSection = document.createElement("section");
+  middleEarthSection.setAttribute("id", "middle-earth");
+  for (var i = 0; i < lands.length; i++) {
+    var x = document.createTextNode(lands[i]);
+    var j = document.createElement("h1")
+    j.appendChild(x);
+    var h = document.createElement("article");
+    h.appendChild(j);
+    middleEarthSection.appendChild(h);
+  }
+  body.appendChild(middleEarthSection);
+
+
+
+
   // create a section tag with an id of middle-earth
   // inside, add each land as an article tag
   // inside each article tag include an h1 with the name of the land
@@ -36,6 +51,20 @@ makeMiddleEarth();
 // Part 2
 
 function makeHobbits() {
+
+  var theShire = document.querySelector("article");
+  var unorderedListOfHobbits = document.createElement("ul");
+  for (var i = 0; i < hobbits.length; i++) {
+    var hobbitListItems = document.createElement("li");
+    hobbitListItems.innerHTML = hobbits[i];
+    hobbitListItems.setAttribute("class", "hobbit")
+    unorderedListOfHobbits.appendChild(hobbitListItems);
+    
+  }
+  
+  theShire.appendChild(unorderedListOfHobbits);
+  
+  
   // display an unordered list of hobbits in the shire (which is the first article tag on the page)
   // give each hobbit a class of hobbit
 }
@@ -44,6 +73,14 @@ function makeHobbits() {
 // Part 3
 
 function keepItSecretKeepItSafe() {
+
+var ringDiv = document.createElement("div");
+ringDiv.setAttribute("class" , "magic-imbued-jewelry");
+ringDiv.setAttribute("id" , "the-ring");
+var frodo = document.querySelector(".hobbit");
+frodo.appendChild(ringDiv);
+document.querySelector("#the-ring").addEventListener("click", nazgulScreech);
+
   // create a div with an id of 'the-ring'
   // give the div a class of 'magic-imbued-jewelry'
   // add an event listener so that when a user clicks on the ring, the nazgulScreech function (provided) is invoked
@@ -55,6 +92,16 @@ function keepItSecretKeepItSafe() {
 
 
 function makeBuddies() {
+  var buddiesList = document.createElement("ul");
+  for (var i = 0; i < buddies.length; i++) {
+    var buddyListItems = document.createElement("li");
+    buddyListItems.innerHTML = buddies[i];
+    buddiesList.appendChild(BuddyListItems);
+  }
+  var newBuddyList = document.createElement("aside");
+  newBuddyList.appendChild(buddiesList);
+  
+
   // create an aside tag
   // attach an unordered list of the 'buddies' in the aside
   // insert your aside as a child element of rivendell
