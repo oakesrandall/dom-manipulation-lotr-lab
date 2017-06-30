@@ -74,34 +74,39 @@ function makeHobbits() {
 
 function keepItSecretKeepItSafe() {
 
-var ringDiv = document.createElement("div");
-ringDiv.setAttribute("class" , "magic-imbued-jewelry");
-ringDiv.setAttribute("id" , "the-ring");
-var frodo = document.querySelector(".hobbit");
-frodo.appendChild(ringDiv);
-document.querySelector("#the-ring").addEventListener("click", nazgulScreech);
+  var ring = document.createElement('div');
+  ring.setAttribute("id", "the-ring");
+ 
+  var frodo = document.querySelector('.hobbit');
+  frodo.appendChild(ring);
 
+  ring.className = "magic-imbued-jewelry";
+  
+  document.querySelector("#the-ring").addEventListener("click", nazgulScreech);
+  
+
+}
   // create a div with an id of 'the-ring'
   // give the div a class of 'magic-imbued-jewelry'
   // add an event listener so that when a user clicks on the ring, the nazgulScreech function (provided) is invoked
   // add the ring as a child of Frodo
-}
 
 
 // Part 4
 
 
 function makeBuddies() {
-  var buddiesList = document.createElement("ul");
+  var unorderedList = document.createElement("ul");
+  var asideDiv = document.createElement("aside");
   for (var i = 0; i < buddies.length; i++) {
-    var buddyListItems = document.createElement("li");
-    buddyListItems.innerHTML = buddies[i];
-    buddiesList.appendChild(BuddyListItems);
+    var tempBuddy = document.createTextNode(buddies[i]);
+    var listItem = document.createElement("li");
+    listItem.appendChild(tempBuddy);
+    unorderedList.appendChild(listItem);
   }
-  var newBuddyList = document.createElement("aside");
-  newBuddyList.appendChild(buddiesList);
-  
-
+  asideDiv.appendChild(unorderedList);
+  var rivendell = document.querySelectorAll("article")[1];
+  rivendell.appendChild(asideDiv);
   // create an aside tag
   // attach an unordered list of the 'buddies' in the aside
   // insert your aside as a child element of rivendell
@@ -112,14 +117,23 @@ function makeBuddies() {
 
 
 function beautifulStranger() {
+
+var strider = document.querySelectorAll("li")[7];
+strider.innerHTML = "Aragorn";
+
   // change the 'Strider' textnode to 'Aragorn'
 }
 
 
 // Part 6
-
-function leaveTheShire() {
-  // assemble the hobbits and move them to Rivendell
+//NOT WORKING YET
+// function leaveTheShire() {
+//   var hobbits = document.querySelectorAll(".hobbit");
+//   var rivendell = document.querySelectorAll("article")[1];
+//   console.log(hobbits);
+//   console.log(rivendell);
+//   // rivendell.appendChild(hobbits);
+//   // assemble the hobbits and move them to Rivendell
 }
 
 
