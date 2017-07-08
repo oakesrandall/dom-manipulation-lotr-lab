@@ -28,7 +28,7 @@ function makeMiddleEarth() {
   middleEarthSection.setAttribute("id", "middle-earth");
   for (var i = 0; i < lands.length; i++) {
     var x = document.createTextNode(lands[i]);
-    var j = document.createElement("h1")
+    var j = document.createElement("h1");
     j.appendChild(x);
     var h = document.createElement("article");
     h.appendChild(j);
@@ -57,7 +57,7 @@ function makeHobbits() {
   for (var i = 0; i < hobbits.length; i++) {
     var hobbitListItems = document.createElement("li");
     hobbitListItems.innerHTML = hobbits[i];
-    hobbitListItems.setAttribute("class", "hobbit")
+    hobbitListItems.setAttribute("class", "hobbit");
     unorderedListOfHobbits.appendChild(hobbitListItems);
     
   }
@@ -118,20 +118,23 @@ function makeBuddies() {
 
 function beautifulStranger() {
 
-var strider = document.querySelectorAll("li")[7];
-strider.innerHTML = "Aragorn";
-
-  // change the 'Strider' textnode to 'Aragorn'
+  var strider = document.querySelectorAll("li")[7];
+  strider.innerHTML = "Aragorn";
 }
+  // change the 'Strider' textnode to 'Aragorn'
+
 
 
 // Part 6
 //NOT WORKING YET
-// function leaveTheShire() {
-//   var hobbits = document.querySelectorAll(".hobbit");
-//   var rivendell = document.querySelectorAll("article")[1];
-//   console.log(hobbits);
-//   console.log(rivendell);
+function leaveTheShire() {
+  var hobbits = document.querySelectorAll(".hobbit");
+  var rivendell = document.querySelectorAll("article")[1];
+  console.log(hobbits);
+  console.log(rivendell);
+  for (var i = 0; i < hobbits.length; i++) {
+    rivendell.appendChild(hobbits[i]);
+  }
 //   // rivendell.appendChild(hobbits);
 //   // assemble the hobbits and move them to Rivendell
 }
@@ -141,9 +144,10 @@ strider.innerHTML = "Aragorn";
 
 
 function forgeTheFellowShip() {
+
   // create a new div called 'the-fellowship' within rivendell
   // add each hobbit and buddy one at a time to 'the-fellowship'
-  // after each character is added make an alert that they have joined your party
+ // after each character is added make an alert that they have joined your party
 }
 
 
